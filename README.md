@@ -1,16 +1,65 @@
-# fatecanos
+# Fatecanos App
 
-A new Flutter project.
+## A flutter app built for fatec students consult your grades, absences and organize "paredões".
 
-## Getting Started
+O objetivo deste projeto é disponibilizar de maneira faciltada a consulta de notas e médias do alunos em suas respectivas disciplinas e organizar uma votação em tempo real para uma decisão de um possível “paredão” que caso venha a acontecer notifica os professores.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Fatecanos - Dados Consumidos da API ([fatec-api](https://github.com/filipemeneses/fatec-api))
+---
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+#### Geral
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```js
+conta.getProfile().then(perfil => perfil)
+```
+
+    - email
+    - unit
+
+---
+
+#### User Info
+
+```js
+conta.getProfile().then(perfil => perfil)
+```
+
+    - picture
+    - name
+    - unit
+    - period
+
+#### Course Info
+
+```js
+conta.getEnrolledDisciplines().then(discipline => discipline)
+```
+
+    - name
+    - presenses
+    - absenses
+    - teacherName
+
+```js
+conta.getPartialGrades().then(grade => grade)
+```
+
+    - grade (nota atual)
+    - maxGrade (temos que fazer) exemplo de query abaixo necessario fazer logico com os pesos
+        - grades.score
+        - weight
+
+```js
+conta.getPartialGrades().then(courses => {
+  const newObj = courses.map(course => {
+    return {
+      course: course.discipline.name,
+      evaluations: couse.evaluations
+    };
+  });
+})
+```
+
+    
