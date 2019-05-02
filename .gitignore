@@ -17,6 +17,7 @@
 
 # Custom
 .vscode/
+.env
 
 # Flutter/Dart/Pub related
 **/doc/api/
