@@ -15,8 +15,9 @@
 *.iws
 .idea/
 
-# Visual Studio Code related
+# Custom
 .vscode/
+.env
 
 # Flutter/Dart/Pub related
 **/doc/api/
