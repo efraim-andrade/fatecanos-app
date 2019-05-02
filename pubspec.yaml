@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_dotenv: ^2.0.1
   cloud_functions: ^0.1.2+1
   
   # The following adds the Cupertino Icons font to your application.
@@ -50,10 +51,13 @@ flutter:
       - asset: fonts/JosefinSans-Bold.ttf
         weight: 600
 
+assets:
+  - .env
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+  - uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:
