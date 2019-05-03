@@ -31,8 +31,10 @@ class Login extends State<LoginPage> {
 
     return
     Scaffold(
-      body:     
-        Container(
+      resizeToAvoidBottomInset: true,
+      body: 
+      SingleChildScrollView(
+        child: Container(
           padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 160.0),
           decoration: BoxDecoration(color: Colors.white),
           
@@ -42,21 +44,21 @@ class Login extends State<LoginPage> {
 
             children: <Widget>[
               Container(
-                margin: const EdgeInsets.only(bottom: 90.0),
+                margin: const EdgeInsets.only(bottom: 60.0),
                 child: 
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start, //Horizontal
                     crossAxisAlignment: CrossAxisAlignment.start, //Vertical
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 8.0),
+
+                      Container(  
                         child: 
                           Text(
                             'Seja bem vindo ao,',
 
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 13,
                               fontFamily: "JosefinSans",
                               fontWeight: FontWeight.w400,
                               color: Colors.black87
@@ -90,7 +92,7 @@ class Login extends State<LoginPage> {
 
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontFamily: "JosefinSans",
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black87
@@ -102,7 +104,7 @@ class Login extends State<LoginPage> {
 
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontFamily: "JosefinSans",
                                   fontWeight: FontWeight.w700,
                                   color: Colors.deepOrangeAccent
@@ -114,7 +116,7 @@ class Login extends State<LoginPage> {
 
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontFamily: "JosefinSans",
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black87
@@ -280,6 +282,7 @@ class Login extends State<LoginPage> {
             ],
           ),
         ),
+      )    
     );
   }
 }
