@@ -6,6 +6,14 @@ O objetivo deste projeto é disponibilizar de maneira faciltada a consulta de no
 
 ---
 
+## Fatecanos - API
+
+- **BASE** https://fatecanos-backend.herokuapp.com/
+- **REGISTER** (POST, { username, password }): https://fatecanos-backend.herokuapp.com/register
+- **UPDADE** (POST, { username, password }): https://fatecanos-backend.herokuapp.com/update
+
+---
+
 ## Fatecanos - Dados Consumidos da API ([fatec-api](https://github.com/filipemeneses/fatec-api))
 ---
 
