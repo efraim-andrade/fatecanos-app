@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import '../components/Button.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key); // prop-types
@@ -261,26 +262,7 @@ class Login extends State<LoginPage> {
                             Container(
                               width: MediaQuery.of(context).size.width,
                               margin: const EdgeInsets.only(bottom: 8.0),
-                              child: RaisedButton(
-                                onPressed: () { _handleSubmit(); },
-
-                                textColor: Colors.white,
-                                color: Colors.deepOrange,
-                                splashColor: Colors.orangeAccent,
-                                padding: EdgeInsets.all(16),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)
-                                ),
-
-                                child: Text(
-                                  'ENTRAR',
-
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w700
-                                  ),
-                                ),
-                              ) 
+                              child: button("ENTRAR", "primary", _handleSubmit) ,
                             )
                           ]
                         ),
