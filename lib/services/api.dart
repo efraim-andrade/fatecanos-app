@@ -1,6 +1,8 @@
 import 'dart:convert' show json;
 import 'package:http/http.dart' as http;
 
+import './storage.dart';
+
 class Api {
   static final baseURL =  "https://fatecanos-backend.herokuapp.com";
 
@@ -32,6 +34,8 @@ class Api {
       var status = response.statusCode;
 
       if(status != 200) throw new Error();
+
+      new LocalStorage().setUserCredentials(username, password);
 
       return "deu muito bom, ${status}";
     } catch(error) {

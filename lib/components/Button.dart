@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-  
 RaisedButton button(String title, String color, _handleSubmit) {
   return
   RaisedButton(
