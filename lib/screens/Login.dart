@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'dart:convert' show json;
-import 'package:http/http.dart' as http;
-import 'dart:io';
 
 import '../services/api.dart';
 import '../components/Button.dart';
@@ -30,29 +27,7 @@ class Login extends State<LoginPage> {
     var username = userController.text;
     var password = passwordController.text;
 
-    String api = new Api().getBaseURL();
-
-    var user = json.encode({
-        "username": username,
-        "password": password
-    });
-
-    var headers = {
-      "Content-type": "application/json", 
-      "Accept": "application/json"
-    };
-
-    var response = await http.post('${api}/register',
-      headers: headers, 
-      body: user
-    );
-
-    print(response);
-
-    print('user: ${username}');
-    print('password: ${password}');
-
-    print('Did Work Nice do Nice');
+    await new Api().registerUser(username, password);
 
     setState(() {
       loading = false;
