@@ -3,7 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class LocalStorage {
   final storage = new FlutterSecureStorage();
 
-   getUserCredentials() async {
+  getUserCredentials() async {
     var username = await storage.read(key: 'username');
     var password = await storage.read(key: 'password');
 

@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'dart:convert' show json;
 import 'package:http/http.dart' as http;
 
 import './storage.dart';
+import '../routes.dart';
 
 class Api {
   static final baseURL =  "https://fatecanos-backend.herokuapp.com";
@@ -12,7 +14,7 @@ class Api {
     return baseURL;
   }
 
-  registerUser(String username, String password) async {
+  registerUser(String username, String password, context) async {
     var baseURL = this.getBaseURL();
 
     var user = json.encode({
@@ -36,6 +38,15 @@ class Api {
       if(status != 200) throw new Error();
 
       new LocalStorage().setUserCredentials(username, password);
+
+      var routes = Router.getRoutes();
+
+      routes['home'];
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: routes['home'])
+      );
 
       return "deu muito bom, ${status}";
     } catch(error) {

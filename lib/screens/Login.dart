@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../services/api.dart';
-import '../components/Button.dart';
 import '../services/storage.dart';
+import '../components/Button.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.loged}) : super(key: key); // prop-types
@@ -32,7 +32,7 @@ class Login extends State<LoginPage> {
     var username = userController.text;
     var password = passwordController.text;
 
-    await new Api().registerUser(username, password);
+    await new Api().registerUser(username, password, context);
 
     var credentials = await new LocalStorage().getUserCredentials();
 
@@ -40,7 +40,7 @@ class Login extends State<LoginPage> {
 
     setState(() {
       loading = false;
-    });
+    }); 
   }
 
   @override
