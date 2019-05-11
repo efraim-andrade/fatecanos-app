@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../services/api.dart';
 import '../services/storage.dart';
+import '../components/Toast.dart';
 import '../components/Button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -32,7 +33,7 @@ class Login extends State<LoginPage> {
     var username = userController.text;
     var password = passwordController.text;
 
-    await new Api().registerUser(username, password, context);
+    var response = await new Api().registerUser(username, password, context);
 
     var credentials = await new LocalStorage().getUserCredentials();
 
@@ -40,7 +41,9 @@ class Login extends State<LoginPage> {
 
     setState(() {
       loading = false;
-    }); 
+    });
+
+    new TheToast(response, context).setToast();
   }
 
   @override

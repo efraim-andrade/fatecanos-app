@@ -48,9 +48,14 @@ class Api {
         MaterialPageRoute(builder: routes['home'])
       );
 
-      return "deu muito bom, ${status}";
-    } catch(error) {
-      return "Ocorreu uma falha na autenticação ou o siga deu problema, tente novamente!";
+      return {"status": status , "message": "Logado com sucesso!"};
+    } catch(error) { 
+      print(error);
+             
+      return {
+        "status": 401,
+        "message": "Ocorreu uma falha na autenticação ou o siga deu problema, tente novamente!"
+      };
     }
   }
 }
