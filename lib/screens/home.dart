@@ -27,6 +27,14 @@ class Home extends State<HomePage> {
               20,
               4.5
             ),
+            card(
+              "Programação Web",
+              "José Antônio Castanho de Almeida",
+              22,
+              18,
+              20,
+              2
+            ),
           ],
         ),
       ),

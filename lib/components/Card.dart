@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+handleAbsensesThermometer(int absenses) {
+  var colorThermomether = {
+    'low': Color.fromRGBO(34, 179, 85, 1),
+    'medium': Color.fromRGBO(221, 176, 0, 1),
+    'high': Color.fromRGBO(255, 71, 15, 1),
+  };
+
+  if (absenses <= 8) return colorThermomether['low'];  
+  if (absenses > 8 && absenses <=14) return colorThermomether['medium'];  
+  if (absenses > 14 ) return colorThermomether['high'];  
+}
+
 Card card(
   String course,
   String teacher,
   int presences,
   int absences,
   int maxAbsenses,
-  num media
+  num grade
 ) {
   return
     Card(
@@ -44,7 +56,7 @@ Card card(
                           ),
                           
                           Text(
-                            'média: ${media}',
+                            'média: ${grade}',
                             style: TextStyle(color: Color.fromRGBO(44, 44, 44, 1),),
                           )
                         ],
@@ -116,7 +128,7 @@ Card card(
                                     child: Icon(
                                       FontAwesomeIcons.userSlash,
                                       size: 14,
-                                      color: Color.fromRGBO(221, 176, 0, 1),
+                                      color: handleAbsensesThermometer(absences),
                                     ),
                                   ),
 
@@ -124,7 +136,7 @@ Card card(
                                     'faltas: ${absences}',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      color: Color.fromRGBO(221, 176, 0, 1)
+                                      color: handleAbsensesThermometer(absences)
                                     ),
                                   )
                                 ],
@@ -152,7 +164,8 @@ Card card(
                         '${maxAbsenses - absences} aulas ',
                         style: TextStyle(
                           fontSize: 12,
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w600,
+                          color: handleAbsensesThermometer(absences)
                         ),
                       ),
 
