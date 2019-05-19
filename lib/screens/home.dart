@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/Card.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -16,11 +17,17 @@ class Home extends State<HomePage> {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Go back!'),
+        child: Column(
+          children: <Widget>[
+            card(
+              "Engenharia de Software IV",
+              "Danilo Ruy Gomes",
+              28,
+              12,
+              20,
+              4.5
+            ),
+          ],
         ),
       ),
     );

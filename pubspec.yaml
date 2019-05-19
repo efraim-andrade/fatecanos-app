@@ -24,6 +24,7 @@ dependencies:
   toast: ^0.1.4
   flutter_dotenv: ^2.0.1
   cloud_functions: ^0.1.2+1
+  font_awesome_flutter: ^8.2.0
   flutter_secure_storage: ^3.2.1+1
   
   # The following adds the Cupertino Icons font to your application.
@@ -40,6 +41,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  uses-material-design: true
   fonts:
   - family: JosefinSans
     fonts:
