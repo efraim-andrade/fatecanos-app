@@ -5,6 +5,7 @@ import '../services/api.dart';
 import '../services/storage.dart';
 import '../components/Toast.dart';
 import '../components/Button.dart';
+import '../components/Input.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.loged}) : super(key: key); // prop-types
@@ -185,33 +186,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        TextField(
-                                          controller: userController,
-                                          textAlign: TextAlign.left,
-                                          decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: Color.fromRGBO(230, 230, 230, 1),
-                                            contentPadding: const EdgeInsets.only(
-                                              left: 14.0, 
-                                              bottom: 13.0, 
-                                              top: 13.0
-                                            ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.white),
-                                              borderRadius: BorderRadius.circular(16.0)
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.white),
-                                              borderRadius: BorderRadius.circular(16.0)
-                                            )
-                                          ),
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontFamily: "JosefinSans",
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black87,
-                                          ),
-                                        )
+                                        input(userController, false)
                                     ),
                                   ],
                                 )
@@ -243,34 +218,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        TextField(
-                                          controller: passwordController,
-                                          textAlign: TextAlign.left,
-                                          obscureText: true,
-                                          decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: Color.fromRGBO(230, 230, 230, 1),
-                                            contentPadding: const EdgeInsets.only(
-                                              left: 14.0, 
-                                              bottom: 13.0, 
-                                              top: 13.0
-                                            ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.white),
-                                              borderRadius: BorderRadius.circular(16.0)
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.white),
-                                              borderRadius: BorderRadius.circular(16.0)
-                                            )
-                                          ),
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontFamily: "JosefinSans",
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black87,
-                                          ),
-                                        )
+                                        input(passwordController, true)
                                     ),
                                   ],
                                 )
