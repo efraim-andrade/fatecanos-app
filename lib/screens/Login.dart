@@ -186,7 +186,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        input(userController, false)
+                                        input(userController, false, "")
                                     ),
                                   ],
                                 )
@@ -218,7 +218,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        input(passwordController, true)
+                                        input(passwordController, true, "")
                                     ),
                                   ],
                                 )
