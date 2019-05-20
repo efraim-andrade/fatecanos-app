@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../services/api.dart';
 import '../services/storage.dart';
+
 import '../components/Toast.dart';
 import '../components/Button.dart';
 import '../components/Input.dart';
@@ -186,7 +187,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        input(userController, false, "")
+                                        input(userController, false, false, "")
                                     ),
                                   ],
                                 )
@@ -218,7 +219,7 @@ class Login extends State<LoginPage> {
                                     Container(
                                       margin: const EdgeInsets.only(bottom: 8.0),
                                       child:
-                                        input(passwordController, true, "")
+                                        input(passwordController, false, true, "")
                                     ),
                                   ],
                                 )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../components/Card.dart';
 import '../components/Input.dart';
@@ -14,6 +15,57 @@ class HomePage extends StatefulWidget {
 class Home extends State<HomePage> {
   TextEditingController searchController = new TextEditingController();
 
+  var courses = [
+    {
+      "course": "Engenharia de Software IV",
+      "teacher": "Danilo Ruy Gomes" ,
+      "presences": 28,
+      "absenses": 12,
+      "maxAbsences": 20,
+      "grade": 4.5
+    },
+    {
+      "course": "Programação Web",
+      "teacher": "José Antônio Castanho de Almeida" ,
+      "presences": 22,
+      "absenses": 18,
+      "maxAbsences": 20,
+      "grade": 2
+    },
+    {
+      "course": "Engenharia de Software IV",
+      "teacher": "Danilo Ruy Gomes" ,
+      "presences": 28,
+      "absenses": 12,
+      "maxAbsences": 20,
+      "grade": 4.5
+    },
+    {
+      "course": "Programação Web",
+      "teacher": "José Antônio Castanho de Almeida" ,
+      "presences": 22,
+      "absenses": 18,
+      "maxAbsences": 20,
+      "grade": 2
+    },
+    {
+      "course": "Engenharia de Software IV",
+      "teacher": "Danilo Ruy Gomes" ,
+      "presences": 28,
+      "absenses": 12,
+      "maxAbsences": 20,
+      "grade": 4.5
+    },
+    {
+      "course": "Programação Web",
+      "teacher": "José Antônio Castanho de Almeida" ,
+      "presences": 22,
+      "absenses": 18,
+      "maxAbsences": 20,
+      "grade": 2
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,27 +74,56 @@ class Home extends State<HomePage> {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: <Widget>[
-            input(searchController, false, "Buscar matéria"),
-            card(
-              "Engenharia de Software IV",
-              "Danilo Ruy Gomes",
-              28,
-              12,
-              20,
-              4.5
-            ),
-            card(
-              "Programação Web",
-              "José Antônio Castanho de Almeida",
-              22,
-              18,
-              20,
-              2
-            ),
-          ],
-        ),
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.only(bottom: 20),
+                child: Row(
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: input(searchController, true, false, "Buscar matéria"),
+                    ),
+                    Flexible(
+                      flex: 0,
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 20),
+                        child: Icon(
+                          FontAwesomeIcons.sync,
+                          size: 14,
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+
+
+              Container(
+                height: MediaQuery.of(context).size.height * .6,
+                child: ListView.builder(
+                  itemCount: courses.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 8),
+                      child: card(
+                        courses[index]["course"],
+                        courses[index]["teacher"],
+                        courses[index]["presences"],
+                        courses[index]["absenses"],
+                        courses[index]["maxAbsences"],
+                        courses[index]["grade"],
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        )
       ),
     );
   }

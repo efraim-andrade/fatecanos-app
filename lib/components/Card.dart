@@ -23,6 +23,9 @@ Card card(
 ) {
   return
     Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16)
+      ),
       child: 
         Container(
           padding: EdgeInsets.all(20),
