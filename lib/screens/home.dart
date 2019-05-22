@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../components/Card.dart';
 import '../components/Input.dart';
+import '../components/UserInfo.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -73,10 +74,14 @@ class Home extends State<HomePage> {
         title: Text("Second Route"),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Container(
           child: Column(
             children: <Widget>[
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                child: userInfo(),
+              ),
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
                 child: Row(
@@ -88,11 +93,13 @@ class Home extends State<HomePage> {
                     Flexible(
                       flex: 0,
                       child: Container(
-                        margin: const EdgeInsets.only(left: 20),
-                        child: Icon(
-                          FontAwesomeIcons.sync,
-                          size: 14,
-                          color: Colors.deepOrangeAccent,
+                        width: 40,
+                        child: FlatButton(
+                          child: Icon(
+                            FontAwesomeIcons.sync,
+                            size: 14,
+                            color: Colors.deepOrangeAccent,
+                          ),
                         ),
                       ),
                     )
@@ -100,10 +107,8 @@ class Home extends State<HomePage> {
                 ),
               ),
 
-
-
               Container(
-                height: MediaQuery.of(context).size.height * .6,
+                height: MediaQuery.of(context).size.height * .5,
                 child: ListView.builder(
                   itemCount: courses.length,
                   itemBuilder: (context, index) {
