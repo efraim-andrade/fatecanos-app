@@ -80,7 +80,11 @@ class Home extends State<HomePage> {
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.only(bottom: 10),
-                child: userInfo(),
+                child: userInfo(
+                  "Efraim de Andrade Morais Junior",
+                  "https://avatars1.githubusercontent.com/u/28229600?s=460&v=4",
+                  "Análise e Desenvolvimento de Sistemas"
+                ),
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
@@ -107,8 +111,8 @@ class Home extends State<HomePage> {
                 ),
               ),
 
-              Container(
-                height: MediaQuery.of(context).size.height * .5,
+              Flexible(
+                flex: 1,
                 child: ListView.builder(
                   itemCount: courses.length,
                   itemBuilder: (context, index) {
