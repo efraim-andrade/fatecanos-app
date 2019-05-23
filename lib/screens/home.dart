@@ -23,7 +23,7 @@ class Home extends State<HomePage> {
       "presences": 28,
       "absenses": 12,
       "maxAbsences": 20,
-      "grade": 4.5
+      "grade": 6.6
     },
     {
       "course": "Programação Web",
@@ -55,7 +55,7 @@ class Home extends State<HomePage> {
       "presences": 28,
       "absenses": 12,
       "maxAbsences": 20,
-      "grade": 4.5
+      "grade": 10
     },
     {
       "course": "Programação Web",

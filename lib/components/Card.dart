@@ -58,10 +58,14 @@ Card card(
                             ),
                           ),
                           
-                          Text(
-                            'média: ${grade}',
-                            style: TextStyle(color: Color.fromRGBO(44, 44, 44, 1),),
-                          )
+                          Container(
+                            width: 55,
+                            child: Text(
+                              'média: ${grade}',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(color: Color.fromRGBO(44, 44, 44, 1),),
+                            )
+                          ),
                         ],
                       )
                     ],
