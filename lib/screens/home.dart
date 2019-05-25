@@ -71,7 +71,16 @@ class Home extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        actions: <Widget>[
+            IconButton(
+              icon: Icon(FontAwesomeIcons.bell)
+            )
+        ],
+        leading: IconButton(
+          icon: Icon(Icons.playlist_add)
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
