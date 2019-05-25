@@ -65,7 +65,7 @@ Card card(
                           ),
 
                           Container(
-                            width: 43,
+                            width: 50,
                             child: Text(
                               'média: ${grade}',
                               textAlign: TextAlign.right,

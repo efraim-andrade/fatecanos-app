@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../components/Card.dart';
@@ -72,18 +73,25 @@ class Home extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(250, 250, 250, 1),
         elevation: 0.0,
         actions: <Widget>[
             IconButton(
-              icon: Icon(FontAwesomeIcons.bell)
+              color: Colors.black87,
+              icon: Icon(CommunityMaterialIcons.bell),
+              onPressed: () {print("pressed");},
             )
         ],
         leading: IconButton(
-          icon: Icon(Icons.playlist_add)
+          color: Colors.deepOrangeAccent,
+          icon: Icon(CommunityMaterialIcons.wall),
+          onPressed: () {print("pressed");},
         ),
       ),
       body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(250, 250, 250, 1)
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Container(
           child: Column(
@@ -108,8 +116,9 @@ class Home extends State<HomePage> {
                       flex: 0,
                       child: Container(
                         width: 40,
-                        child: FlatButton(
-                          child: Icon(
+                        child: IconButton(
+                          onPressed: () {print("pressed");},
+                          icon: Icon(
                             FontAwesomeIcons.sync,
                             size: 14,
                             color: Colors.deepOrangeAccent,
