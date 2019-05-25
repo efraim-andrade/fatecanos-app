@@ -23,10 +23,12 @@ dependencies:
   http: ^0.12.0
   toast: ^0.1.4
   flutter_dotenv: ^2.0.1
-  cloud_functions: ^0.1.2+1
+  firebase_core: 0.2.5+1
+  # cloud_functions: 0.0.5
+  # cloud_firestore: 0.8.2+3
   font_awesome_flutter: ^8.2.0
   flutter_secure_storage: ^3.2.1+1
-  
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2

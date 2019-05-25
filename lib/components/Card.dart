@@ -8,9 +8,9 @@ handleAbsensesThermometer(int absenses) {
     'high': Color.fromRGBO(255, 71, 15, 1),
   };
 
-  if (absenses <= 8) return colorThermomether['low'];  
-  if (absenses > 8 && absenses <=14) return colorThermomether['medium'];  
-  if (absenses > 14 ) return colorThermomether['high'];  
+  if (absenses <= 8) return colorThermomether['low'];
+  if (absenses > 8 && absenses <=14) return colorThermomether['medium'];
+  if (absenses > 14 ) return colorThermomether['high'];
 }
 
 Card card(
@@ -26,7 +26,7 @@ Card card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16)
       ),
-      child: 
+      child:
         Container(
           padding: EdgeInsets.all(20),
           child:
@@ -38,12 +38,18 @@ Card card(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        course.toUpperCase(),
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(44, 44, 44, 1),
+                      Flexible(
+                        child: Container(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Text(
+                            course.toUpperCase(),
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromRGBO(44, 44, 44, 1),
+                            ),
+                          ),
                         ),
                       ),
 
@@ -53,17 +59,20 @@ Card card(
                             margin: const EdgeInsets.only(right: 4),
                             child: Icon(
                               FontAwesomeIcons.solidBookmark,
-                              size: 14,
+                              size: 11,
                               color: Color.fromRGBO(44, 44, 44, 1),
                             ),
                           ),
-                          
+
                           Container(
-                            width: 55,
+                            width: 43,
                             child: Text(
                               'média: ${grade}',
                               textAlign: TextAlign.right,
-                              style: TextStyle(color: Color.fromRGBO(44, 44, 44, 1),),
+                              style: TextStyle(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                fontSize: 11
+                              ),
                             )
                           ),
                         ],
@@ -80,7 +89,7 @@ Card card(
                         teacher,
                         style: TextStyle(
                           fontWeight: FontWeight.w300,
-                          fontSize: 12
+                          fontSize: 11
                         ),
                       )
                     ],
@@ -110,7 +119,7 @@ Card card(
 
                                     child: Icon(
                                       FontAwesomeIcons.userCheck,
-                                      size: 14,
+                                      size: 11,
                                       color: Colors.blueAccent,
                                     ),
                                   ),
@@ -118,7 +127,7 @@ Card card(
                                   Text(
                                     'presenças: ${presences}',
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 13,
                                       color: Colors.blueAccent
                                     ),
                                   )
@@ -134,7 +143,7 @@ Card card(
 
                                     child: Icon(
                                       FontAwesomeIcons.userSlash,
-                                      size: 14,
+                                      size: 11,
                                       color: handleAbsensesThermometer(absences),
                                     ),
                                   ),
@@ -142,7 +151,7 @@ Card card(
                                   Text(
                                     'faltas: ${absences}',
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 13,
                                       color: handleAbsensesThermometer(absences)
                                     ),
                                   )

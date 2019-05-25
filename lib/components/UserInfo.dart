@@ -5,7 +5,7 @@ Container userInfo(
   String avatar,
   String course
 ) {
-  return 
+  return
     Container(
       child: Column(
         children: <Widget>[
