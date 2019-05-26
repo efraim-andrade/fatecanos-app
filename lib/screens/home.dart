@@ -6,6 +6,7 @@ import 'package:community_material_icon/community_material_icon.dart';
 import '../components/Card.dart';
 import '../components/Input.dart';
 import '../components/UserInfo.dart';
+import '../components/CreateBigWallModal.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -17,6 +18,15 @@ class HomePage extends StatefulWidget {
 
 class Home extends State<HomePage> {
   TextEditingController searchController = new TextEditingController();
+  TextEditingController courseController = new TextEditingController();
+  TextEditingController bigWallDayController = new TextEditingController();
+
+  openBigWallModal() {
+    showDialog(
+      context: context,
+      child: createBigWallModal(courseController, bigWallDayController)
+    );
+  }
 
   var courses = [
     {
@@ -78,14 +88,14 @@ class Home extends State<HomePage> {
         actions: <Widget>[
             IconButton(
               color: Colors.black87,
-              icon: Icon(CommunityMaterialIcons.bell),
+              icon: Icon(CommunityMaterialIcons.bell, size: 30,),
               onPressed: () {print("pressed");},
             )
         ],
         leading: IconButton(
           color: Colors.deepOrangeAccent,
-          icon: Icon(CommunityMaterialIcons.wall),
-          onPressed: () {print("pressed");},
+          icon: Icon(CommunityMaterialIcons.wall, size: 30,),
+          onPressed: () {openBigWallModal();},
         ),
       ),
       body: Container(

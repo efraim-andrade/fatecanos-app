@@ -8,8 +8,8 @@ class LocalStorage {
     var password = await storage.read(key: 'password');
 
     var credentials = { 'username': username, 'password': password };
- 
-    return credentials; 
+
+    return credentials;
   }
 
   void setUserCredentials(String username, String password) async {
