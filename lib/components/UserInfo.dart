@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 Container userInfo(
@@ -5,6 +8,8 @@ Container userInfo(
   String avatar,
   String course
 ) {
+  Uint8List data = Base64Decoder().convert(avatar);
+
   return
     Container(
       child: Column(
@@ -16,7 +21,7 @@ Container userInfo(
               child: Container(
                 height: 100,
                 width: 100,
-                child: Image.network(avatar),
+                child: Image.memory(base64.decode(avatar)),
               )
             ),
           ),

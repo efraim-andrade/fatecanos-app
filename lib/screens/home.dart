@@ -39,7 +39,7 @@ class Home extends State<HomePage> {
         name = doc.data['name'];
         course = doc.data['course'];
         period = doc.data['period'];
-        avatar = doc.data['avatar64'];
+        avatar = doc.data['avatar'];
       });
     });
   }
