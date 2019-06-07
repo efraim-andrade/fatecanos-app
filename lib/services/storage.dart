@@ -6,8 +6,13 @@ class LocalStorage {
   getUserCredentials() async {
     var username = await storage.read(key: 'username');
     var password = await storage.read(key: 'password');
+    var code = await storage.read(key: 'code');
 
-    var credentials = { 'username': username, 'password': password };
+    var credentials = {
+      'username': username,
+      'password': password,
+      'code': code
+    };
 
     return credentials;
   }
@@ -28,13 +33,14 @@ class LocalStorage {
     return userInformation;
   }
 
-  void setUserCredentials(String username, String password) async {
+  void setUserCredentials(String username, String password, String code) async {
     await storage.write(key: 'username', value: username);
     await storage.write(key: 'password', value: password);
+    await storage.write(key: 'code', value: code);
   }
 
   void setUserInfo(userInformation) async {
-    if(userInformation != null) {
+    if (userInformation != null) {
       await storage.write(key: 'name', value: userInformation["name"]);
       await storage.write(key: 'period', value: userInformation["period"]);
       await storage.write(key: 'course', value: userInformation["course"]);

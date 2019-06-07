@@ -1,3 +1,4 @@
+import 'package:fatecanos/services/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:community_material_icon/community_material_icon.dart';
@@ -31,15 +32,17 @@ class Home extends State<HomePage> {
 
     final Firestore db = Firestore.instance;
 
-    var userInfo = db.collection('user').document('1310481711001').get();
+    new LocalStorage().getUserCredentials().then((credentials) {
+      var userInfo = db.collection('user').document(credentials['code']).get();
 
-    print('chegou aqui');
-    userInfo.then((doc) {
-      setState(() {
-        name = doc.data['name'];
-        course = doc.data['course'];
-        period = doc.data['period'];
-        avatar = doc.data['avatar'];
+      print('chegou aqui');
+      userInfo.then((doc) {
+        setState(() {
+          name = doc.data['name'];
+          course = doc.data['course'];
+          period = doc.data['period'];
+          avatar = doc.data['avatar'];
+        });
       });
     });
   }

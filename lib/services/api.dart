@@ -6,7 +6,7 @@ import './storage.dart';
 import '../routes.dart';
 
 class Api {
-  static final baseURL =  "https://fatecanos-backend.herokuapp.com";
+  static final baseURL = "https://fatecanos-backend.herokuapp.com";
 
   // static final baseURL =  "http://192.168.43.219:8080";
 
@@ -17,44 +17,39 @@ class Api {
   registerUser(String username, String password, context) async {
     var baseURL = this.getBaseURL();
 
-    var user = json.encode({
-        "username": username,
-        "password": password
-    });
+    var user = json.encode({"username": username, "password": password});
 
     var headers = {
-      "Content-type": "application/json", 
+      "Content-type": "application/json",
       "Accept": "application/json"
     };
 
     try {
-      var response = await http.post('${baseURL}/register',
-        headers: headers, 
-        body: user
-      );
+      var response =
+          await http.post('${baseURL}/register', headers: headers, body: user);
 
       var status = response.statusCode;
+      var decodedResponse = json.decode(response.body);
+      var code = decodedResponse['code'];
 
-      if(status != 200) throw new Error();
+      if (status != 200) throw new Error();
 
-      new LocalStorage().setUserCredentials(username, password);
+      new LocalStorage().setUserCredentials(username, password, code);
 
       var routes = Router.getRoutes();
 
       routes['home'];
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: routes['home'])
-      );
+      Navigator.push(context, MaterialPageRoute(builder: routes['home']));
 
-      return {"status": status , "message": "Logado com sucesso!"};
-    } catch(error) { 
+      return {"status": status, "message": "Logado com sucesso!"};
+    } catch (error) {
       print(error);
-             
+
       return {
         "status": 401,
-        "message": "Ocorreu uma falha na autenticação ou o siga deu problema, tente novamente!"
+        "message":
+            "Ocorreu uma falha na autenticação ou o siga deu problema, tente novamente!"
       };
     }
   }
