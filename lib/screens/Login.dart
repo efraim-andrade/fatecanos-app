@@ -3,9 +3,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../components/Button.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key, this.title}) : super(key: key); // prop-types
+  LoginPage({Key key, this.loged}) : super(key: key); // prop-types
 
-  final String title; // props
+  final ValueChanged<bool> loged;
 
   @override
   Login createState() => Login();
@@ -22,6 +22,10 @@ class Login extends State<LoginPage> {
     setState(() {
       loading = true;
     });
+
+    widget.loged(false);
+    // Navigator.of(context).pushNamed("home");
+    
 
     print('user: ${userController.text}');
     print('password: ${passwordController.text}');
