@@ -34,6 +34,64 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262222019315:android:39f99dd7cb60475f",
+        "android_client_info": {
+          "package_name": "com.example.fatecanos_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262222019315-ap9uuu0jr5d4us445q0f0rclnkleofjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdx5E0PYNj4E_1Ybirys3A3ocQGgnpeBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262222019315-ap9uuu0jr5d4us445q0f0rclnkleofjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262222019315:android:fbb4f5be79f75137",
+        "android_client_info": {
+          "package_name": "com.fatecanoslogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262222019315-ap9uuu0jr5d4us445q0f0rclnkleofjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdx5E0PYNj4E_1Ybirys3A3ocQGgnpeBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262222019315-ap9uuu0jr5d4us445q0f0rclnkleofjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

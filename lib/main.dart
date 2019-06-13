@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import './routes.dart';
 
+import './services/storage.dart';
 import './screens/Login.dart';
 import './screens/home.dart';
 
@@ -17,7 +18,7 @@ class Boostrap extends StatefulWidget {
 }
 
 class MyApp extends State<Boostrap> {
-  bool loged = true;
+  bool loged = false;
 
   void changeLogin(bool val){ 
     setState(() {
@@ -25,17 +26,34 @@ class MyApp extends State<Boostrap> {
     });
   }
 
+   isLogged() async {
+    var credentials = await new LocalStorage().getUserCredentials();
+
+    if(credentials['username'] == null || credentials['password'] == null) return  false;
+
+    return true;
+  }
+
+  initState() {
+    super.initState();
+
+    this.isLogged().then((result) {
+      setState(() {
+        loged = result;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fatecanos',
       theme: ThemeData(
         primarySwatch: Colors.orange,
         fontFamily: 'JosefinSans'
       ),
       routes: Router.getRoutes(),
-      home: loged ? LoginPage(loged: changeLogin) : HomePage(),
+      home: !loged ? LoginPage(loged: changeLogin) : HomePage(),
     );
     
   }
